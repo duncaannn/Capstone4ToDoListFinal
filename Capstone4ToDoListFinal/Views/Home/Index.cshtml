@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Duncan's Task List</h1>
+    <h2 class="display-1">Have you created a task yet?</h2>
+    <p>Let's create <a href="ToDoItem/Create">a task</a>.</p>
+
+    <h3><p>
+    Find by Description: @Html.TextBox("SearchString")
+    <input type="submit" value="Search" />
+</p></h3>
+</div>
+

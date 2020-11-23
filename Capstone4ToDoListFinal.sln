@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30709.132
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capstone4ToDoListFinal", "Capstone4ToDoListFinal\Capstone4ToDoListFinal.csproj", "{213C1E20-5971-489E-871D-2F36538B8B0F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{213C1E20-5971-489E-871D-2F36538B8B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{213C1E20-5971-489E-871D-2F36538B8B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{213C1E20-5971-489E-871D-2F36538B8B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{213C1E20-5971-489E-871D-2F36538B8B0F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {97DBCFCB-C4F1-436D-808B-1F8062909372}
+	EndGlobalSection
+EndGlobal
