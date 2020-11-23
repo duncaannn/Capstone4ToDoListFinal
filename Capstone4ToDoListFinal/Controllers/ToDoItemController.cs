@@ -30,49 +30,49 @@ namespace Capstone4ToDoListFinal.Controllers
             return ViewBag[id];
            
         }
-        public async Task<IActionResult> Index(string sortOrder, string searchString, string currentFilter, int? page)
+        public async Task<IActionResult> Index()
         {
-            //var toDoListContext = _context.TodoItem.Include(t => t.IdNetUsersNavigation);
-            //return View(await toDoListContext.ToListAsync());
-            ViewBag.CurrentSort = sortOrder;
-            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+            var toDoListContext = _context.TodoItem.Include(t => t.IdNetUsersNavigation);
+            return View(await toDoListContext.ToListAsync());
+            //ViewBag.CurrentSort = sortOrder;
+            //ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            //ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
 
-            if(searchString!=null)
-            {
-                page = 1;
-            }
-            else
-            {
-                searchString = currentFilter;
-            }
-            ViewBag.CurrentFilter = searchString;
-            var toDo = from t in db.TodoItem
-                       select t;
-                if(!String.IsNullOrEmpty(searchString))
-            {
-                toDo = toDo.Where(t => t.Description.Contains(searchString));
-            }
-            switch(sortOrder)
-            {
-                case "description_desc":
-                    toDo = toDo.OrderByDescending(t => t.Description);
-                    break;
-                case "Date":
-                    toDo = toDo.OrderBy(t => t.DueDate);
-                    break;
-                case "Complete":
-                    toDo = toDo.OrderBy(t => t.Complete);
-                    break;
-                default:
-                    toDo = toDo.OrderBy(t => t.Id);
-                    break;
+            //if(searchString!=null)
+            //{
+            //    page = 1;
+            //}
+            //else
+            //{
+            //    searchString = currentFilter;
+            //}
+            //ViewBag.CurrentFilter = searchString;
+            //var toDo = from t in db.TodoItem
+            //           select t;
+            //    if(!String.IsNullOrEmpty(searchString))
+            //{
+            //    toDo = toDo.Where(t => t.Description.Contains(searchString));
+            //}
+            //switch(sortOrder)
+            //{
+            //    case "description_desc":
+            //        toDo = toDo.OrderByDescending(t => t.Description);
+            //        break;
+            //    case "Date":
+            //        toDo = toDo.OrderBy(t => t.DueDate);
+            //        break;
+            //    case "Complete":
+            //        toDo = toDo.OrderBy(t => t.Complete);
+            //        break;
+            //    default:
+            //        toDo = toDo.OrderBy(t => t.Id);
+            //        break;
 
-            }
-            int pageSize = 3;
-            int pageNumber = (page ?? 1);
+            //}
+            //int pageSize = 3;
+            //int pageNumber = (page ?? 1);
 
-            return View(db.TodoItem.ToPagedList(pageNumber, pageSize));
+            //return View(db.TodoItem.ToPagedList(pageNumber, pageSize));
         }
 
        
